@@ -1,0 +1,79 @@
+/* Set body and html to 100% height */
+*{
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    height: 100%;
+    margin: 0; /* Remove default margin */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+h1 , h3 {
+    text-align: center;
+    font-size: 36px; /* Increase the font size for the title */
+    margin-top: 10px;
+    color: #fff; /* Change text color to white for better visibility */
+}
+
+#text {
+    text-align: center;
+    font-size: 18px; /* Adjust font size for the content */
+    color: #fff; /* Change text color to white for better visibility */
+}
+
+/* Gradient animation */
+@keyframes gradientAnimation {
+    0% {
+        background: linear-gradient(to bottom, #3498db, #1abc9c);
+    }
+    100% {
+        background: linear-gradient(to bottom, #1abc9c, #3498db);
+    }
+}
+
+/* Apply gradient animation to the body */
+body {
+    animation: gradientAnimation 5s infinite alternate; /* Adjust animation duration and iteration as needed */
+}
+
+/* Add some styling to the content */
+#content {
+    flex: 1;
+    padding: 20px;
+    padding: 20px;
+    margin: 20px;
+}
+
+/* Style the Welcome!!! text when no message is present */
+div > h1 {
+    font-size: 48px; /* Larger font size for the welcome message */
+    color: #d6dad9; /* Teal color for welcome message */
+}
+
+iframe {
+    max-width: 100%;
+    height: auto;
+    width: 640px;
+    height: 360px;
+    border: 4px;
+    border-radius: 15px; /* Add border-radius for rounded corners */
+    transition: border-radius 0.5s, transform 0.5s; /* Add transitions for border-radius and transform */
+}
+
+iframe:hover {
+    border-radius: 0; /* Change border-radius on hover */
+    transform: scale(1.03) ; /* Add scale transform on hover */
+}
+
+#video-container {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+}

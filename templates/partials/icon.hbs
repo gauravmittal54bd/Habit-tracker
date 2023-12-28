@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .custom-icon {
+            display: inline-block;
+            position: relative;
+        }
+
+        .custom-icon #icon {
+            font-size: 40px; 
+            color: #050505; 
+        }
+
+        .custom-icon .text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 10px; 
+            color: #e9e1e1; 
+            font-weight: bold; 
+        }
+    </style>
+</head>
+<body>
+    <div class="custom-icon">
+        <i class="fas fa-calendar fa-sm" id="icon"></i>
+        <div class="text">{{dayName}}</div>
+    </div>
+</body>
+</html>

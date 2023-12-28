@@ -1,0 +1,200 @@
+/* Reset default styles and set font family */
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  background: linear-gradient(to bottom, #3498db, #1abc9c);
+  animation: gradientAnimation 10s infinite alternate;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  transition: background 0.5s ease;
+}
+
+/* Header styling */
+header {
+  background-color: #333; /* Dark background color */
+  color: #fff;
+  padding: 10px;
+}
+
+/* Navigation styling */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: bold;
+}
+
+.nav-logo a {
+  color: white; /* White color for the navbar heading */
+  text-decoration: none;
+}
+
+.nav-items {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Main container for the habit tracker */
+.container {
+  width: 80%; /* Increased width */
+  margin: 50px auto;
+  background-color: whitesmoke; /* Light gray background */
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+      background-color: transparent; /* Set background to transparent on mobile view */
+      box-shadow: none;
+  }
+}
+
+/* Heading style */
+h1 {
+  color: #181717;
+  font-size: 32px; /* Larger font size */
+  margin-bottom: 20px;
+}
+
+/* Input container */
+.input-container {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Input field */
+.input-container input {
+  flex-grow: 1;
+  padding: 12px; /* Slightly larger padding */
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+/* Add habit button */
+.input-container button {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 24px; /* Slightly larger padding */
+  cursor: pointer;
+  margin-left: 10px;
+  font-size: 18px; /* Larger font size */
+  transition: background-color 0.3s ease;
+}
+
+/* Add habit button hover effect */
+.input-container button:hover {
+  background-color: #45a049;
+  transform: scale(1.05); /* Slight scale-up animation on hover */
+}
+
+/* Habit list container */
+.habit-list {
+  display: none; /* Hide the container initially */
+  text-align: left;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* Individual habit item */
+.habit-item {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: fadeIn 0.5s ease; /* Fade-in animation for habit items */
+}
+
+/* Checkmark icon color */
+.habit-item i {
+  color: #4caf50;
+}
+
+/* Script link style */
+.script-link {
+  text-align: right;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #888; /* Light gray color */
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Footer styling */
+footer {
+  background-color: #333; /* Dark background color */
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+  margin-top: auto;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .container {
+    width: 90%; /* Reduce the width for small screens */
+    margin: 20px auto;
+  }
+
+  h1 {
+    font-size: 24px; /* Reduce the font size for smaller screens */
+    margin-bottom: 10px; /* Adjust margin */
+  }
+
+  .input-container {
+    flex-direction: column; /* Stack input and button vertically on small screens */
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  /* Adjust padding for the input field and button */
+  .input-container input {
+    padding: 10px;
+  }
+
+  .input-container button {
+    padding: 10px 20px;
+    margin-left: 0;
+  }
+
+  .habit-list {
+    max-height: 200px;
+  }
+
+  /* Decrease the font size for habit items */
+  .habit-item {
+    font-size: 14px;
+  }
+}

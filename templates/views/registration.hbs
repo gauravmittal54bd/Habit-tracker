@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/auth-styles/registration-styles.css">
+</head>
+
+<body>
+    {{>navbar}}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="text-center">Registration</h2>
+                    </div>
+                    <div class="card-body">
+                        <form id="registration-form" action="/registration" method="POST">
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="first-name" class="form-label">First Name</label>
+                                    <input type="text" id="first-name" name="firstname" class="form-control" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="last-name" class="form-label">Last Name</label>
+                                    <input type="text" id="last-name" name="lastname" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" id="email" name="email" class="form-control" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="phone" class="form-label">Phone Number</label>
+                                    <input type="text" id="phone" name="phone" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">Gender</label>
+                                    <div class="form-check">
+                                        <input type="radio" class="form-check-input" id="male" name="gender"
+                                            value="Male" required>
+                                        <label class="form-check-label" for="male">Male</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="radio" class="form-check-input" id="female" name="gender"
+                                            value="Female" required>
+                                        <label class="form-check-label" for="female">Female</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="age" class="form-label">Age</label>
+                                    <input type="number" id="age" name="age" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="password" class="form-label">Password</label>
+                                    <input type="password" id="password" name="password" class="form-control" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="confirm-password" class="form-label">Confirm Password</label>
+                                    <input type="password" id="confirm-password" name="confirmpassword"
+                                        class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                {{#if errorMessage}}
+                                <p class="text-danger">{{errorMessage}}</p>
+                                {{else}}
+                                <p>Already registered? <a href="/login">Login here</a></p>
+                                {{/if}}
+                            </div>
+                            <div class="g-recaptcha" data-sitekey="6LehgzIoAAAAACb6sL7xpVBsGUAF6Oo8HJ4IjBrt"></div>
+                            <br />
+                            <div class="row mb-3">
+                                <div class="col-md-12 text-center">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="your-div">
+        <!-- Content in the <div> -->
+    </div>
+    {{>footer}}
+    <script>
+        // Function to handle form submission
+        function handleFormSubmission(event) {
+            event.preventDefault(); // Prevent the default form submission behavior
+
+            // Verify reCAPTCHA here
+            const recaptchaResponse = grecaptcha.getResponse();
+
+            if (recaptchaResponse.length === 0) {
+                alert('Please complete the reCAPTCHA.');
+            } else {
+                // ReCAPTCHA is verified, submit the form
+                document.getElementById("registration-form").submit();
+            }
+        }
+
+        // Attach the form submission handler to the form
+        document.getElementById("registration-form").addEventListener("submit", handleFormSubmission);
+    </script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!-- Include Bootstrap JS (optional, if needed) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

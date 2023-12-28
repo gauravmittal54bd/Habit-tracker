@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Habit Tracking App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="/css/user-styles/main-style.css">
+</head>
+
+<body>
+  <header class="header-footer">
+    <nav class="links">
+      <a href="/addHabit">Add Habit</a>
+      <a href="/viewAll">View All Habits</a>
+      <a href="/todaysHabits">Today's Habit</a>
+      <a href="/favorite">Go to favorites</a>
+      <a href="/logout">Logout</a>
+    </nav>
+  </header>
+  <main>
+    <div class="welcome">
+      <h1>Welcome to Habit Tracking App</h1>
+    </div>
+  </main>
+  <div id="username-display" class="username-display"></div>
+  <footer class="header-footer">
+    <div class="links">
+    </div>
+    <div class="h3">Currently logged in user : {{firstname}} {{lastname}}</div>
+    <div class="created-by">
+      <span>@created by Gaurav</span>
+    </div>
+  </footer>
+</body>
+
+
+</html>

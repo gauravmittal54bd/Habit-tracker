@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Include Bootstrap CSS and JavaScript -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/css/user-styles/view-styles.css">
+  <title>All Habits</title>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="nav-logo">
+        <a href="/habitIndex">Back to Home</a>
+      </div>
+    </nav>
+  </header>
+
+   {{#if habits}}
+  <div class="container">
+    <h1>All Habits</h1>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Habit</th>
+            <th scope="col">Weekly Status</th>
+            <th scope="col">Favorite</th> <!-- New column for Favorite -->
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each habits}}
+          <tr>
+            <td>{{this.name}}</td>
+            <td class="weekday-container">
+              {{#each this.dates}}
+              <label id="dropdown-label" for="weekday-dropdown"> <span>{{customFunction this.date}}</span></label>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <label id="dropdown-label" for="weekday-dropdown">{{>icon dayName=this.complete}}</label>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <select name="Status" id="dropdown" class="form-select form-select-sm habit-Status"
+                data-habit-id="{{this._id}}">
+                <option id="dropdown-option-placeholder" value="" disabled selected>Choose Status</option>
+                <option id="dropdown-option-unmarked" value="Unmarked">Unmarked</option>
+                <option id="dropdown-option-completed" value="Completed">Completed</option>
+                <option id="dropdown-option-pending" value="Pending" >Pending</option>
+              </select>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <span>{{>messagebox message=this.Status}}</span>
+              <br>
+              {{/each}}
+              &nbsp;
+            </td>
+            <td>
+              <form>
+    <label>
+      <input type="checkbox" class="favorite-checkbox" data-habit-id="{{this._id}}" {{#if this.favorite}}checked{{/if}}>
+    </label>
+  </form>
+            </td>
+            <td>
+              <button class="btn btn-danger delete-button" data-habit-id="{{this._id}}">Delete</button>
+            </td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  {{else}}
+    <h3 id = "emptyhabit">No habits to track right now.</h3>
+  {{/if}}
+
+
+  <footer>
+    <p>Created by Gaurav</p>
+  </footer>
+  <script src="/js/user-js/view-script.js"></script>
+</body>
+
+</html>

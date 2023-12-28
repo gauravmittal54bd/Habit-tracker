@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer</title>
+    <!-- Include Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS for the footer and sticky behavior -->
+    <style>
+       /* Original styles for the footer */
+footer {
+    background-color: rgba(51, 51, 51, 0.9); /* Light gray background color */
+    color: #f7f6f6; /* Dark text color */
+    padding: 10px;
+    flex-shrink: 0; /* Prevent footer from shrinking */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon {
+    font-size: 24px;
+    margin: 0 10px;
+    color: #eee8e8; /* Dark text color */
+}
+
+.icon:hover {
+    color: #f0f2f5; /* Blue color on hover */
+}
+
+.footer-text {
+    margin: 0;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.footer-text:hover {
+    color: #007bff; /* Blue color on hover */
+}
+
+/* Style to fill remaining vertical space */
+.content {
+    flex-grow: 1;
+}
+
+.text-and-links {
+    display: flex;
+    align-items: center;
+}
+
+.text-and-links .footer-text {
+    margin-right: 10px;
+}
+
+/* Media query for mobile screens */
+@media (max-width: 767px) {
+    .text-and-links {
+        flex-direction: column; /* Stack elements vertically on smaller screens */
+        align-items: flex-start; /* Align elements to the left on smaller screens */
+    }
+
+    .text-and-links .footer-text {
+        margin: 5px 0; /* Adjust spacing between stacked elements */
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="content">
+        <!-- Content of your page goes here -->
+    </div>
+    <footer>
+        <div class="text-and-links">
+            <span class="footer-text">Created by</span>
+            <a href="mailto:gauravmittal54bd@gmail.com" class="footer-text">@Gaurav</a>
+        </div>
+        <div>
+            <a href="https://github.com/gauravmittal54" target="_blank" class="icon"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/gaurav-mittal-301972201/" target="_blank" class="icon"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </footer>
+</body>
+</html>

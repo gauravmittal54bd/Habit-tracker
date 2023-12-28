@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <!-- Include Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS for the navbar -->
+    <style>
+        /* Original styles for the navbar */
+nav {
+    background-color: rgba(51, 51, 51, 0.9); /* Light gray background color   */
+    padding: 10px;
+    text-align: center; /* Center-align the links */
+}
+
+.navbar-text {
+    font-size: 18px;
+    margin: 0 15px; /* Add spacing between links */
+    color: #f3f1f1; /* Dark text color */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.navbar-text:hover {
+    color: #007bff; /* Blue color on hover */
+}
+
+/* Media query for mobile screens */
+@media (max-width: 767px) {
+    nav {
+        text-align: center; /* Left-align links */
+    }
+
+    .navbar-text {
+        display: block; /* Display links as block elements for vertical stacking */
+        margin: 10px 0; /* Add spacing between links */
+    }
+}
+
+    </style>
+</head>
+<body>
+    <nav>
+        
+         {{#if jwt}}
+            <a href="/secret" class="navbar-text"><i class="fas fa-user-secret"></i> Secret Page</a>
+            <a href="/resetPassword" class="navbar-text"><i class="fas fa-user-secret"></i> Reset password</a>
+            <a href="/logout" class="navbar-text"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        {{else}}
+            <a href="/" class="navbar-text"><i class="fas fa-home"></i> Home</a>
+            <a href="/registration" class="navbar-text"><i class="fas fa-user-plus"></i> Register</a>
+            <a href="/login" class="navbar-text"><i class="fas fa-sign-in-alt"></i> Login</a>
+        {{/if}}
+    </nav>
+</body>
+</html>
