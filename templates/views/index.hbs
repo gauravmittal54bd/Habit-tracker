@@ -7,7 +7,9 @@
     <title>Authenticate</title>
     <!-- Link to your custom CSS file -->
     <link rel="stylesheet" href="css/auth-styles/style.css">
-   
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
@@ -17,36 +19,58 @@
         <h1>{{message}}</h1>
         {{else}}
         <div>
-            <h1 id="typewriter">Build Better Habits , Build a Better Life</h1>
+            <h1 id="typewriter">Build Better Habits, Build a Better Life!</h1>
         </div>
         <div>
             <h3 id="video-heading">See how it works <i class="fas fa-chevron-down" id="arrow-icon"></i></h3>
             <h1 id="video-container">
                 <video width="640" height="480" controls autoplay>
-                    <source src="https://drive.google.com/uc?export=download&id=1QZ4EUdUwhiLy_vOK7_Mh23s3tpVZrinE" type="video/mp4">
+                    <source src="https://drive.google.com/uc?export=download&id=1QZ4EUdUwhiLy_vOK7_Mh23s3tpVZrinE"
+                        type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </h1>
         </div>
+        <div id="auth-section">
+            <div class="auth-box" id="register-box">
+                <h2>Get Started</h2>
+                <br>
+                <h4>Register to access the main page!</h4><br>
+                <button class="button"><a href="/registration" class="navbar-text">Register</a></button>
+            </div>
+            <div class="auth-box" id="login-box">
+                <h2>Already Registered?</h2>
+                <br>
+                <h4>Login to continue.</h4><br>
+                <button class="button"><a href="/login" class="navbar-text">Login</a></button>
+            </div>
+        </div>
+
+
         {{/if}}
     </div>
     {{>footer}}
 
     <script>
         document.getElementById('video-heading').addEventListener('click', function () {
-            var videoContainer = document.getElementById('video-container');
-            var arrowIcon = document.getElementById('arrow-icon');
+    var videoContainer = document.getElementById('video-container');
+    var arrowIcon = document.getElementById('arrow-icon');
+    var authSection = document.getElementById('auth-section');
 
-            if (videoContainer.style.maxHeight === '0px' || videoContainer.style.maxHeight === '') {
-                videoContainer.style.maxHeight = '500px'; // Adjust the maximum height as needed
-                arrowIcon.className = 'fas fa-chevron-up';
-                document.getElementById('video-heading').innerHTML = 'Hide the video <i class="fas fa-chevron-up" id="arrow-icon"></i>';
-            } else {
-                videoContainer.style.maxHeight = '0';
-                arrowIcon.className = 'fas fa-chevron-down';
-                document.getElementById('video-heading').innerHTML = 'See how it works <i class="fas fa-chevron-down" id="arrow-icon"></i>';
-            }
-        });
+    if (videoContainer.style.maxHeight === '0px' || videoContainer.style.maxHeight === '') {
+        // Video is expanding, hide auth section
+        videoContainer.style.maxHeight = '500px'; // Adjust the maximum height as needed
+        arrowIcon.className = 'fas fa-chevron-up';
+        document.getElementById('video-heading').innerHTML = 'Hide the video <i class="fas fa-chevron-up" id="arrow-icon"></i>';
+        authSection.style.display = 'none'; // Hide auth section
+    } else {
+        // Video is collapsing, show auth section
+        videoContainer.style.maxHeight = '0';
+        arrowIcon.className = 'fas fa-chevron-down';
+        document.getElementById('video-heading').innerHTML = 'See how it works <i class="fas fa-chevron-down" id="arrow-icon"></i>';
+        authSection.style.display = 'flex'; // Show auth section
+    }
+});
     </script>
 
 </body>
