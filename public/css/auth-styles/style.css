@@ -6,6 +6,7 @@
 html, body {
     height: 100%;
     margin: 0; /* Remove default margin */
+    font-family: 'Arial', sans-serif; 
 }
 
 body {
@@ -49,6 +50,24 @@ body {
     padding: 20px;
     padding: 20px;
     margin: 20px;
+}
+
+/* Style the Welcome!!! text when no message is present */
+div > h1 {
+    font-size: 48px; /* Larger font size for the welcome message */
+    color: #d6dad9; /* Teal color for welcome message */
+    overflow: hidden; /* Hide overflow text */
+    white-space: nowrap; /* Prevent text from wrapping */
+    animation: typewriter 4s steps(40) 1s forwards; /* Typewriter animation */
+}
+
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
 }
 
 /* Style the Welcome!!! text when no message is present */
