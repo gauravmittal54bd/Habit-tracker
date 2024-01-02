@@ -17,12 +17,15 @@
         <h1>{{message}}</h1>
         {{else}}
         <div>
-            <h1>Build Better Habits , Build a Better Life</h1>
+            <h1 id="typewriter">Build Better Habits , Build a Better Life</h1>
         </div>
         <div>
             <h3 id="video-heading">See how it works <i class="fas fa-chevron-down" id="arrow-icon"></i></h3>
             <h1 id="video-container">
-                <iframe src="https://drive.google.com/file/d/1QZ4EUdUwhiLy_vOK7_Mh23s3tpVZrinE/preview" width="640" height="480" allow="autoplay"></iframe>
+                <video width="640" height="480" controls autoplay>
+                    <source src="https://drive.google.com/uc?export=download&id=1QZ4EUdUwhiLy_vOK7_Mh23s3tpVZrinE" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </h1>
         </div>
         {{/if}}
