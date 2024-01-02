@@ -6,7 +6,7 @@
 html, body {
     height: 100%;
     margin: 0; /* Remove default margin */
-    font-family: 'Arial', sans-serif; 
+    
 }
 
 body {
@@ -53,42 +53,46 @@ body {
 }
 
 /* Style the Welcome!!! text when no message is present */
-div > h1 {
-    font-size: 48px; /* Larger font size for the welcome message */
-    color: #d6dad9; /* Teal color for welcome message */
-    overflow: hidden; /* Hide overflow text */
-    white-space: nowrap; /* Prevent text from wrapping */
-    margin: 0 auto; /* Center the text */
-}
+#typewriter {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(40, end),
+      blink-caret .75s step-end infinite;
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: transparent; }
+  }
 
-@keyframes typewriter {
-    from {
-        width: 0;
-    }
-    to {
-        width: 100%;
-    }
-}
-
-/* Typewriter animation */
-div > h1.typing {
-    animation: typewriter 4s steps(40) 1s forwards; /* Adjust animation duration and delay as needed */
-}
-
-
-iframe {
+  video {
     max-width: 100%;
     height: auto;
     width: 640px;
     height: 360px;
     border: 4px;
     border-radius: 15px; /* Add border-radius for rounded corners */
-    transition: border-radius 0.5s, transform 0.5s; /* Add transitions for border-radius and transform */
+    transition: border-radius 0.5s, transform 0.5s, filter 0.5s, box-shadow 0.5s; /* Add transitions for border-radius, transform, filter, and box-shadow */
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.2); /* Add a subtle drop shadow */
+    background-color: black;
 }
 
-iframe:hover {
-    border-radius: 0; /* Change border-radius on hover */
-    transform: scale(1.03) ; /* Add scale transform on hover */
+video:hover {
+    border-radius: 15px; /* Change border-radius on hover */
+    transform: scale(1.03); /* Add scale transform on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increase drop shadow on hover */
+    background-color: black;
 }
 
 #video-container {
@@ -96,3 +100,6 @@ iframe:hover {
     overflow: hidden;
     transition: max-height 0.5s ease-out;
 }
+
+
+
