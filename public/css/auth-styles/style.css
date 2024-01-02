@@ -47,6 +47,7 @@ body {
 /* Add some styling to the content */
 #content {
     flex: 1;
+    position: relative;
     padding: 20px;
     padding: 20px;
     margin: 20px;
@@ -60,7 +61,7 @@ body {
     margin: 0 auto; /* Gives that scrolling effect as the typing happens */
     letter-spacing: .15em; /* Adjust as needed */
     animation: 
-      typing 3.5s steps(40, end),
+      typing 5.5s steps(40, end),
       blink-caret .75s step-end infinite;
   }
   
@@ -100,6 +101,46 @@ video:hover {
     overflow: hidden;
     transition: max-height 0.5s ease-out;
 }
+
+#auth-section {
+    display: flex;
+    bottom: 0;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.auth-box {
+    flex: 1;
+    margin: 30px 10px 10px 10px;
+    padding: 20px;
+    height: 150px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#register-box,
+#login-box {
+    background-color: #ffffff; /* White background */
+    position: relative;
+}
+
+.button {
+    background-color: #3498db; /* IANA Blue */
+    color: #ffffff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: auto; /* Align the button to the right */
+}
+
+.button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
 
 
 
