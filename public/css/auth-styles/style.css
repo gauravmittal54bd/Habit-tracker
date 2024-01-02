@@ -58,7 +58,7 @@ div > h1 {
     color: #d6dad9; /* Teal color for welcome message */
     overflow: hidden; /* Hide overflow text */
     white-space: nowrap; /* Prevent text from wrapping */
-    animation: typewriter 4s steps(40) 1s forwards; /* Typewriter animation */
+    margin: 0 auto; /* Center the text */
 }
 
 @keyframes typewriter {
@@ -70,11 +70,11 @@ div > h1 {
     }
 }
 
-/* Style the Welcome!!! text when no message is present */
-div > h1 {
-    font-size: 48px; /* Larger font size for the welcome message */
-    color: #d6dad9; /* Teal color for welcome message */
+/* Typewriter animation */
+div > h1.typing {
+    animation: typewriter 4s steps(40) 1s forwards; /* Adjust animation duration and delay as needed */
 }
+
 
 iframe {
     max-width: 100%;
