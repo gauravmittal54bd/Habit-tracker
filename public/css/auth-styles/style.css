@@ -90,9 +90,9 @@ body {
 }
 
 video:hover {
-    border-radius: 15px; /* Change border-radius on hover */
-    transform: scale(1.03); /* Add scale transform on hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increase drop shadow on hover */
+    border-radius: 15px;
+    transform: scale(1.03);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     background-color: black;
 }
 
@@ -104,9 +104,9 @@ video:hover {
 
 #auth-section {
     display: flex;
-    bottom: 0;
     width: 100%;
     margin-top: 30px;
+    flex-wrap: wrap;
 }
 
 .auth-box {
@@ -125,17 +125,13 @@ video:hover {
 }
 
 .button {
-    background-color: #3498db; /* IANA Blue */
+    background-color: #3498db;
     color: #ffffff;
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
-    margin-left: auto; /* Align the button to the right */
-}
-
-.button {
     position: absolute;
     bottom: 10px;
     right: 10px;
@@ -146,7 +142,3 @@ video:hover {
     height: 100vh; 
     text-align: center;
 }
-
-
-
-
